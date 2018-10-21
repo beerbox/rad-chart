@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Radek</title>
+    <!-- Browsers that do not support Web Components APIs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.0.2/webcomponents-bundle.js" integrity="sha256-ikJ2FHo48TNNfRHCzB2/0xx3exzs7Tdg8EJ3/KFu0Xk=" crossorigin="anonymous"></script>
+    <!-- <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js" integrity="sha256-J2sc79NPV/osLcIpzL3K8uJyAD7T5gaEFKlLDM18oxY=" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    
+    <rad-chart name="CPU" usage="0" w="400" h="400"></rad-chart>
+    <rad-chart name="DISK" usage="0" w="400" h="400"></rad-chart>
+    <rad-chart name="RAM" usage="0" w="400" h="400"></rad-chart>
+    <rad-chart name="NETWORK" usage="0" w="400" h="400"></rad-chart>
+
+
+    <script src="/dist/rad-chart-bundle.js"></script>
+    <script>
+    let doc = document.getElementsByTagName("rad-chart");
+ 
+    window.setInterval(()=>{
+        console.log("interval ")
+    
+    doc[0].usage = 100*Math.random();
+    doc[1].usage = 10*Math.random();
+    doc[2].usage = 25*Math.random();
+    doc[3].usage = 55*Math.random();
+    },1000)
+    </script>
+</body>
+</html>
