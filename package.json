@@ -1,6 +1,6 @@
 {
   "name": "rad-chart",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "chart js web component",
   "main": "./src/main.js",
   "scripts": {
@@ -12,11 +12,11 @@
   "author": "Radek Szpila",
   "license": "MIT",
   "dependencies": {
-    "@polymer/lit-element": "^0.6.2"
+    "lit-element": "^2.0.1"
   },
   "devDependencies": {
-    "webpack": "^4.21.0",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
   }
 }

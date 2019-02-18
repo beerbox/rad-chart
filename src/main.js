@@ -1,4 +1,4 @@
-import {LitElement, html} from '@polymer/lit-element';
+import {LitElement, html} from 'lit-element';
 
 class RadChart extends LitElement {
 
@@ -19,6 +19,7 @@ class RadChart extends LitElement {
    
   }
 
+
   updated(changedProperties) {
       
     console.log("a: "+changedProperties); // logs previous values
@@ -28,34 +29,15 @@ class RadChart extends LitElement {
             this.chart.data.datasets[0].data.push(this.usage);
             this.chart.data.labels.push(this.usage.toFixed(1).toString()+"%");
             this.chart.update();
-            // var ro = new ResizeObserver( entries => {
-            //     for (let entry of entries) { 
-            //       const cr = entry.contentRect; 
-            //       console.log('Element:', entry.target); 
-            //       console.log(`Element size: ${cr.width}px x ${cr.height}px`); 
-            //       console.log(`Element padding: ${cr.top}px ; ${cr.left}px`); 
-            //     } 
-            //   }); 
-            //   ro.observe(this.shadowRoot.querySelector('.container'));
-              // Observe one or multiple elements 
-              
-        
-    
-    }
-    // if(this.usage!==undefined&&this.chart!==undefined){
-        
-    //     setTimeout(()=>{
-    //         this.chart.data.datasets[0].data.push(this.usage);
-    //         this.chart.data.labels.push(this.usage.toString());
-    //     },1000)
-    
-    // }
+           
   }
+}
 
-connectedCallback(){
+
+
+firstUpdated(){
+  
    
-    setTimeout(()=>{
-
 this.ctx = this.shadowRoot.getElementById('radchart').getContext('2d');
     this.chart = new Chart(this.ctx, {
         type: 'line',
@@ -85,7 +67,7 @@ this.ctx = this.shadowRoot.getElementById('radchart').getContext('2d');
             }
         }
     });
-    },200);
+  
     
 }
   
